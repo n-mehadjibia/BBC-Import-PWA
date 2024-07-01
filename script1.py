@@ -1,29 +1,188 @@
-# Imports ==========================================================
+# IMPORTS ==========================================================
 import pandas as pd
+import math
 
-# Consts ==========================================================
-PATH_TO_EXCLUDED_PRODUCTS = '/Users/macbook/Desktop/Import PWA/Scripts/Inputs/Category1 to delete.csv'
+# CONSTS ==========================================================
+PATH_TO_EXCLUDED_PRODUCTS = 'Inputs/Category1 to delete.csv'
 EXCLUDED_PRODUCTS_CSV_SEP = ','
-PATH_TO_DATA_CATEGORIES = 'data_categories.csv'
+PATH_PRODUCT_MAPPING = 'Inputs/Product Mapping.csv'
+PRODUCT_MAPPING_CSV_SEP = ','
+PATH_CSAT_TAGS = 'Inputs/CSAT tags.csv'
+CSAT_TAGS_CSV_SEP = ','
+PATH_TO_DATA_CATEGORIES = 'Inputs/data_categories.csv'
 DATA_CATEGORIES_CSV_SEP = ','
-PATH_TO_MACROS = '/Users/macbook/Desktop/Import PWA/Scripts/export_data_1.csv'
+PATH_TO_MACROS = 'Inputs/Macros.csv'
 MACROS_CSV_SEP = ';'
 
-# Import CSV Files ==========================================================
+RECORD_TYPE_ID = '012AP000001WGCL'
+
+# IMPORT CSV FILES ==========================================================
 excluded_products_df = pd.read_csv(PATH_TO_EXCLUDED_PRODUCTS, sep=EXCLUDED_PRODUCTS_CSV_SEP)
+product_mapping_df = pd.read_csv(PATH_PRODUCT_MAPPING, sep=PRODUCT_MAPPING_CSV_SEP)
+csat_tags_df = pd.read_csv(PATH_CSAT_TAGS, sep=CSAT_TAGS_CSV_SEP)
 data_categories_df = pd.read_csv(PATH_TO_DATA_CATEGORIES, sep=DATA_CATEGORIES_CSV_SEP)
 macros_df = pd.read_csv(PATH_TO_MACROS, sep=MACROS_CSV_SEP)
 
+data_categories_df = data_categories_df.fillna('')
+macros_df = macros_df.fillna('')
+
 excluded_products = excluded_products_df['Category1__c'].tolist()
+csat_tags = csat_tags_df['Tag__c'].tolist()
+
+# FUNCTIONS ==========================================================
+
+def format_language(language):
+    if language:
+        if '_' in language:
+            language_split = language.split('_')
+            return language_split[0].lower() + '_' + language_split[1].upper()
+        elif '-' in language:
+            language_split = language.split('-')
+            return language_split[0].lower() + '_' + language_split[1].upper()
+        else:
+            return language.lower()
+    return ''
+
+def get_csat_tag(tags):
+    tags = str(tags)
+    for tag in csat_tags:
+        if tag in tags:
+            return tag
+    return ''
+
+def map_zendesk_category1(category1):
+    mapping = product_mapping_df[product_mapping_df['Zendesk'] == category1]
+    if not mapping.empty:
+        return mapping.iloc[0]['Salesforce']
+    return category1
+
+def keep_macro(macro):
+    if macro['Category1__c'] in excluded_products:
+        return False
+    return True
+
+def extract_zendesk_id(answer_path):
+    start = answer_path.rfind('/') + 1
+    end = answer_path.find('.html')
+    # Extract the ID using slicing
+    id_value = answer_path[start:end]
+    return id_value
+
+def map_data_category(category1, category2, category3, category4, category5):
+    def add_spaces_around_char(input_string, char):
+        # Replace '*' with ' * ' ensuring spaces around it
+        output_string = input_string.replace(char, f' {char} ')
+        # Replace multiple spaces with single space
+        output_string = ' '.join(output_string.split())
+        return output_string
+    
+    result = { 'is_category_changed': False, 'category_name': '' }
+    # map product
+    category1 = map_zendesk_category1(category1)
+
+    # Make sure a space exists befor and after '&' chacarter
+    category2 = add_spaces_around_char(category2, '&')
+    category3 = add_spaces_around_char(category3, '&')
+    category4 = add_spaces_around_char(category4, '&')
+    category5 = add_spaces_around_char(category5, '&')
+
+    data_category_mapping = data_categories_df[
+        (data_categories_df['label1'].str.lower() == category1.lower()) &
+        (data_categories_df['label2'].str.lower() == category2.lower()) &
+        (data_categories_df['label3'].str.lower() == category3.lower()) &
+        (data_categories_df['label4'].str.lower() == category4.lower()) &
+        (data_categories_df['label5'].str.lower() == category5.lower())
+    ]
+
+    if data_category_mapping.empty:
+        result['is_category_changed'] = True
+        data_category_mapping = data_categories_df[
+            (data_categories_df['label1'].str.lower() == category1.lower()) &
+            (data_categories_df['label2'].str.lower() == category2.lower()) &
+            (data_categories_df['label3'].str.lower() == category3.lower()) &
+            (data_categories_df['label4'].str.lower() == category4.lower()) &
+            (data_categories_df['label5'].str.lower() == '')
+        ]
+    if data_category_mapping.empty:
+        data_category_mapping = data_categories_df[
+            (data_categories_df['label1'].str.lower() == category1.lower()) &
+            (data_categories_df['label2'].str.lower() == category2.lower()) &
+            (data_categories_df['label3'].str.lower() == category3.lower()) &
+            (data_categories_df['label4'].str.lower() == '') &
+            (data_categories_df['label5'].str.lower() == '')
+        ]  
+    if data_category_mapping.empty:
+        data_category_mapping = data_categories_df[
+            (data_categories_df['label1'].str.lower() == category1.lower()) &
+            (data_categories_df['label2'].str.lower() == category2.lower()) &
+            (data_categories_df['label3'].str.lower() == '') &
+            (data_categories_df['label4'].str.lower() == '') &
+            (data_categories_df['label5'].str.lower() == '')
+        ]
+    if data_category_mapping.empty:
+        data_category_mapping = data_categories_df[
+            (data_categories_df['label1'].str.lower() == category1.lower()) &
+            (data_categories_df['label2'].str.lower() == '') &
+            (data_categories_df['label3'].str.lower() == '') &
+            (data_categories_df['label4'].str.lower() == '') &
+            (data_categories_df['label5'].str.lower() == '')
+        ]
+    if not data_category_mapping.empty:
+        mapping = data_category_mapping.iloc[0]
+        if mapping['name5']:
+            result['category_name'] = mapping['name5']
+        elif mapping['name4']:
+            result['category_name'] = mapping['name4']
+        elif mapping['name3']:
+            result['category_name'] = mapping['name3']
+        elif mapping['name2']:
+            result['category_name'] = mapping['name2']
+        elif mapping['name1']:
+            result['category_name'] = mapping['name1']
+
+    return result
 
 # ===============================================================================
+# ============================== PROCESSING =====================================
+# ===============================================================================
 
-# Filter Macros 
-kept_macros = macros_df[~macros_df['Category1__c'].isin(excluded_products)]
+columns_macro =  ['IsMasterLanguage', 'Title', 'Language', 'Answer__c', 'RecordTypeId', 'Permission__c', 'Tags__c', 'Category1__c', 'Category2__c', 'Category3__c', 'Category4__c', 'Category5__c']
+kept_macros = pd.DataFrame(columns = columns_macro)
+macros_to_delete = pd.DataFrame(columns = columns_macro)
+changed_category_macros = pd.DataFrame(columns = columns_macro)
 
-macros_to_delete = macros_df[macros_df['Category1__c'].isin(excluded_products)]
+columns_pwa = ['IsMasterLanguage', 'Title', 'Language', 'Answer__c', 'RecordTypeId', 'CSATTag__c', 'datacategorygroup.PreWrittenAnswer', 'ZendeskId__c']
+pwa_df = pd.DataFrame(columns = columns_pwa)
 
-# Prepare PWA
-columns = ['IsMasterLanguage', 'Title', 'Language', 'Answer__c', 'RecordTypeId', 'datacategorygroup.PreWrittenAnswer']
+for index, row in macros_df.iterrows():
+    if keep_macro(row):
+        kept_macros.loc[len(kept_macros)] = row
 
-macros_to_delete.to_csv('test.csv',index=False)
+        pwa_row = {}
+        pwa_row['IsMasterLanguage'] = row['IsMasterLanguage']
+        pwa_row['Title'] = row['Title']
+        pwa_row['Language'] = format_language(row['Language'])
+        pwa_row['Answer__c'] = row['Answer__c']
+        pwa_row['RecordTypeId'] = RECORD_TYPE_ID
+        pwa_row['CSATTag__c'] = get_csat_tag(row['Tags__c'])
+        data_category_mapping_result = map_data_category(
+            row['Category1__c'],
+            row['Category2__c'],
+            row['Category3__c'],
+            row['Category4__c'],
+            row['Category5__c']
+        )
+        pwa_row['datacategorygroup.PreWrittenAnswer'] = data_category_mapping_result['category_name']
+        if data_category_mapping_result['is_category_changed']:
+            changed_category_macros.loc[len(changed_category_macros)] = row
+
+        pwa_row['ZendeskId__c'] = extract_zendesk_id(row['Answer__c'])
+        pwa_df.loc[len(pwa_df)] = pwa_row
+    else:
+        macros_to_delete.loc[len(macros_to_delete)] = row
+
+
+pwa_df.to_csv('Outputs/pwa.csv',index=False)
+kept_macros.to_csv('Outputs/kept macros.csv',index=False)
+macros_to_delete.to_csv('Outputs/macros to delete.csv',index=False)
+changed_category_macros.to_csv('Outputs/changed category macros.csv',index=False)

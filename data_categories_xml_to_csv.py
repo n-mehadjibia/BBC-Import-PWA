@@ -4,7 +4,7 @@ import pandas as pd
 
 # CONST ==========================================================
 # Don't forget to remove xmlns attribute from the DataCategoryGroup element
-DATA_CATEGORIES_PATH = '/Users/macbook/Desktop/Import PWA/Scripts/PreWrittenAnswer.xml'
+DATA_CATEGORIES_PATH = 'Inputs/PreWrittenAnswer.xml'
 
 # FUNCTIONS ==========================================================
 def parse_category_group_xml_to_dataframe(xml_file):
@@ -46,4 +46,4 @@ def parse_category_group_xml_to_dataframe(xml_file):
 df = parse_category_group_xml_to_dataframe(DATA_CATEGORIES_PATH)
 
 # Create CSV
-df.to_csv('data_categories.csv',index=False)
+df.to_csv('Inputs/data_categories.csv',index=False)
