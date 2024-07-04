@@ -1,5 +1,5 @@
 /.DS_Store
 /Inputs
-/PreWrittenAnswer.xml
-/data_categories.csv
-/export_data_1.csv
+/Outputs
+/export_data_1
+/export_data_2

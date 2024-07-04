@@ -1,6 +1,6 @@
 # IMPORTS ==========================================================
 import pandas as pd
-import math
+import os
 
 # CONSTS ==========================================================
 PATH_TO_EXCLUDED_PRODUCTS = 'Inputs/Category1 to delete.csv'
@@ -11,10 +11,15 @@ PATH_CSAT_TAGS = 'Inputs/CSAT tags.csv'
 CSAT_TAGS_CSV_SEP = ','
 PATH_TO_DATA_CATEGORIES = 'Inputs/data_categories.csv'
 DATA_CATEGORIES_CSV_SEP = ','
-PATH_TO_MACROS = 'Inputs/Macros.csv'
+PATH_TO_MACROS = 'Inputs/export_data_1.csv'
+#PATH_TO_MACROS = 'Inputs/export_data_2.csv'
 MACROS_CSV_SEP = ';'
 
 RECORD_TYPE_ID = '012AP000001WGCL'
+
+DELETE_MOCROS = False
+EXPORT_NUMBER = 1
+#EXPORT_NUMBER = 2
 
 # IMPORT CSV FILES ==========================================================
 excluded_products_df = pd.read_csv(PATH_TO_EXCLUDED_PRODUCTS, sep=EXCLUDED_PRODUCTS_CSV_SEP)
@@ -35,13 +40,22 @@ def format_language(language):
     if language:
         if '_' in language:
             language_split = language.split('_')
-            return language_split[0].lower() + '_' + language_split[1].upper()
+            language = language_split[0].lower() + '_' + language_split[1].upper()
         elif '-' in language:
             language_split = language.split('-')
-            return language_split[0].lower() + '_' + language_split[1].upper()
+            language = language_split[0].lower() + '_' + language_split[1].upper()
         else:
-            return language.lower()
-    return ''
+            language = language.lower()
+        
+        # Languages with different Salesforce code
+        if language == 'pt':
+            language = 'pt_PT'
+        elif language == 'nl':
+            language = 'nl_NL'
+        elif language == 'sr':
+            language = 'sh'
+    
+    return language
 
 def get_csat_tag(tags):
     tags = str(tags)
@@ -165,24 +179,42 @@ for index, row in macros_df.iterrows():
         pwa_row['Answer__c'] = row['Answer__c']
         pwa_row['RecordTypeId'] = RECORD_TYPE_ID
         pwa_row['CSATTag__c'] = get_csat_tag(row['Tags__c'])
-        data_category_mapping_result = map_data_category(
-            row['Category1__c'],
-            row['Category2__c'],
-            row['Category3__c'],
-            row['Category4__c'],
-            row['Category5__c']
-        )
-        pwa_row['datacategorygroup.PreWrittenAnswer'] = data_category_mapping_result['category_name']
-        if data_category_mapping_result['is_category_changed']:
-            changed_category_macros.loc[len(changed_category_macros)] = row
+        if  row['IsMasterLanguage']:
+            data_category_mapping_result = map_data_category(
+                row['Category1__c'],
+                row['Category2__c'],
+                row['Category3__c'],
+                row['Category4__c'],
+                row['Category5__c']
+            )
+            pwa_row['datacategorygroup.PreWrittenAnswer'] = data_category_mapping_result['category_name']
+            if data_category_mapping_result['is_category_changed']:
+                changed_category_macros.loc[len(changed_category_macros)] = row
 
         pwa_row['ZendeskId__c'] = extract_zendesk_id(row['Answer__c'])
         pwa_df.loc[len(pwa_df)] = pwa_row
     else:
         macros_to_delete.loc[len(macros_to_delete)] = row
 
+pwa_df = pwa_df.sort_values(by=['ZendeskId__c', 'IsMasterLanguage'], ascending=[True, False])
 
-pwa_df.to_csv('Outputs/pwa.csv',index=False)
-kept_macros.to_csv('Outputs/kept macros.csv',index=False)
-macros_to_delete.to_csv('Outputs/macros to delete.csv',index=False)
-changed_category_macros.to_csv('Outputs/changed category macros.csv',index=False)
+pwa_df.to_csv(f'Outputs/import_{EXPORT_NUMBER}.csv',index=False)
+kept_macros.to_csv(f'Outputs/kept_macros_{EXPORT_NUMBER}.csv',index=False)
+macros_to_delete.to_csv(f'Outputs/macros_to_delete_{EXPORT_NUMBER}.csv',index=False)
+changed_category_macros.to_csv(f'Outputs/changed_category_macros_{EXPORT_NUMBER}.csv',index=False)
+
+# delete macros html files
+if DELETE_MOCROS:
+    macros_deleted = pd.DataFrame(columns=columns_macro)
+    mocros_not_deleted = pd.DataFrame(columns=columns_macro)
+    for index, row in macros_to_delete.iterrows():
+        file_path = row['Answer__c']
+        try:
+            os.remove(file_path)
+            macros_deleted.loc[len(macros_deleted)] = row
+            # print(f"File {file_path} has been deleted successfully.")
+        except Exception as e:
+            mocros_not_deleted.loc[len(mocros_not_deleted)] = row
+            # print(f"An error occurred: {e}")
+    macros_deleted.to_csv(f'Outputs/macros_deleted_{EXPORT_NUMBER}.csv',index=False)
+    mocros_not_deleted.to_csv(f'Outputs/mocros_not_deleted_{EXPORT_NUMBER}.csv',index=False)
