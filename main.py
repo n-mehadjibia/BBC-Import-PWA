@@ -11,15 +11,15 @@ PATH_CSAT_TAGS = 'Inputs/CSAT tags.csv'
 CSAT_TAGS_CSV_SEP = ','
 PATH_TO_DATA_CATEGORIES = 'Inputs/data_categories.csv'
 DATA_CATEGORIES_CSV_SEP = ','
-PATH_TO_MACROS = 'Inputs/export_data_1.csv'
-#PATH_TO_MACROS = 'Inputs/export_data_2.csv'
+#PATH_TO_MACROS = 'Inputs/export_data_1.csv'
+PATH_TO_MACROS = 'Inputs/export_data_2.csv'
 MACROS_CSV_SEP = ';'
 
 RECORD_TYPE_ID = '012AP000001WGCL'
 
-DELETE_MOCROS = False
-EXPORT_NUMBER = 1
-#EXPORT_NUMBER = 2
+DELETE_MOCROS = True
+#EXPORT_NUMBER = 1
+EXPORT_NUMBER = 2
 
 # IMPORT CSV FILES ==========================================================
 excluded_products_df = pd.read_csv(PATH_TO_EXCLUDED_PRODUCTS, sep=EXCLUDED_PRODUCTS_CSV_SEP)

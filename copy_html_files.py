@@ -4,7 +4,7 @@ import os
 import shutil
 
 # CONSTS ==========================================================
-PATH_TO_MACROS = '/Users/macbook/Desktop/Import PWA/samples/from export 2 _/import_2.csv'
+PATH_TO_MACROS = '/Users/macbook/Desktop/Import PWA/sample final/Test room/import.csv'
 MACROS_CSV_SEP = ','
 
 # IMPORT CSV FILES ==========================================================
@@ -31,6 +31,6 @@ def copy_html_files(file_paths, destination_folder):
 
 html_files = macros_df['Answer__c'].to_list()
 
-destination_folder = '/Users/macbook/Desktop/Import PWA/samples/from export 2 _/export_data_2'
+destination_folder = '/Users/macbook/Desktop/Import PWA/sample final/Test room'
 
 copy_html_files(html_files, destination_folder)
