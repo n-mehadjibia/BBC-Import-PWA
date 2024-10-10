@@ -1,4 +1,5 @@
 import os
+import re
 import pandas as pd
 
 def copy_and_replace(csv_path, source_folder, destination_folder):
@@ -22,13 +23,23 @@ def copy_and_replace(csv_path, source_folder, destination_folder):
         # Read the HTML file, replace '/n/n' with '<br/>', and write to the destination path
         with open(source_path, 'r', encoding='utf-8') as file:
             content = file.read().replace('\n\n', '<br/>')
+
+        # Regular expression to find [Text of link] (link)
+        pattern = re.compile(r'\[([^\]]+)\]\s*\((https?://[^\)]+)\)')
+
+        # Replace with <a href="link">Text of link</a>
+        content = pattern.sub(r'[<a href="\2">\1</a>]', content)
+
+        # Regular expression to find **bold text** and replace with <b>bold text</b>
+        bold_pattern = re.compile(r'\*\*(.*?)\*\*')
+        content = bold_pattern.sub(r'<b>\1</b>', content)
         
         with open(destination_path, 'w', encoding='utf-8') as file:
             file.write(content)
 
 # Example usage
-csv_path = '/Users/macbook/Desktop/Import PWA/sample final/Test room/import.csv'  # Path to the CSV file
-source_folder = '/Users/macbook/Desktop/Import PWA/sample final/final/Import_1'  # Folder containing the original HTML files
-destination_folder = '/Users/macbook/Desktop/Import PWA/sample final/Test room/export_data_1'  # Folder to copy the HTML files to
+csv_path = '/Users/macbook/Desktop/Import PWA/sample final/For PP/1/Email/import_1_Email.csv'  # Path to the CSV file
+source_folder = ''  # Folder containing the original HTML files
+destination_folder = '/Users/macbook/Desktop/Import PWA/sample final/For PP/1/Email'  # Folder to copy the HTML files to
 
 copy_and_replace(csv_path, source_folder, destination_folder)

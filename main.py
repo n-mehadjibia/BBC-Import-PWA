@@ -21,6 +21,9 @@ DELETE_MOCROS = True
 #EXPORT_NUMBER = 1
 EXPORT_NUMBER = 2
 
+#CHANNEL = "Email"
+CHANNEL = "Social media"
+
 # IMPORT CSV FILES ==========================================================
 excluded_products_df = pd.read_csv(PATH_TO_EXCLUDED_PRODUCTS, sep=EXCLUDED_PRODUCTS_CSV_SEP)
 product_mapping_df = pd.read_csv(PATH_PRODUCT_MAPPING, sep=PRODUCT_MAPPING_CSV_SEP)
@@ -90,7 +93,7 @@ def map_data_category(category1, category2, category3, category4, category5):
         output_string = ' '.join(output_string.split())
         return output_string
     
-    result = { 'is_category_changed': False, 'category_name': '' }
+    result = { 'is_category_changed': False, 'category_name': '', 'mapping': {} }
     # map product
     category1 = map_zendesk_category1(category1)
 
@@ -143,6 +146,7 @@ def map_data_category(category1, category2, category3, category4, category5):
         ]
     if not data_category_mapping.empty:
         mapping = data_category_mapping.iloc[0]
+        result['mapping'] = mapping
         if mapping['name5']:
             result['category_name'] = mapping['name5']
         elif mapping['name4']:
@@ -165,7 +169,7 @@ kept_macros = pd.DataFrame(columns = columns_macro)
 macros_to_delete = pd.DataFrame(columns = columns_macro)
 changed_category_macros = pd.DataFrame(columns = columns_macro)
 
-columns_pwa = ['IsMasterLanguage', 'Title', 'Language', 'Answer__c', 'RecordTypeId', 'CSATTag__c', 'datacategorygroup.PreWrittenAnswer', 'ZendeskId__c']
+columns_pwa = ['IsMasterLanguage', 'Title', 'Language', 'Answer__c', 'RecordTypeId', 'CSATTag2__c', 'datacategorygroup.PreWrittenAnswer', 'ZendeskId__c', "Channel__c", "Product__c", "Category__c", "SubCategory1__c", "SubCategory2__c", "SubCategory3__c"]
 pwa_df = pd.DataFrame(columns = columns_pwa)
 
 for index, row in macros_df.iterrows():
@@ -174,34 +178,57 @@ for index, row in macros_df.iterrows():
 
         pwa_row = {}
         pwa_row['IsMasterLanguage'] = row['IsMasterLanguage']
-        pwa_row['Title'] = row['Title']
+        pwa_row['Channel__c'] = CHANNEL
+        if CHANNEL == "Social media":
+            pwa_row['Title'] = 'SM - ' + row['Title']
+        else:
+            pwa_row['Title'] = row['Title']
         pwa_row['Language'] = format_language(row['Language'])
         pwa_row['Answer__c'] = row['Answer__c']
         pwa_row['RecordTypeId'] = RECORD_TYPE_ID
-        pwa_row['CSATTag__c'] = get_csat_tag(row['Tags__c'])
+        pwa_row['CSATTag2__c'] = get_csat_tag(row['Tags__c'])
+
+        data_category_mapping_result = map_data_category(
+            row['Category1__c'],
+            row['Category2__c'],
+            row['Category3__c'],
+            row['Category4__c'],
+            row['Category5__c']
+        )
         if  row['IsMasterLanguage']:
-            data_category_mapping_result = map_data_category(
-                row['Category1__c'],
-                row['Category2__c'],
-                row['Category3__c'],
-                row['Category4__c'],
-                row['Category5__c']
-            )
             pwa_row['datacategorygroup.PreWrittenAnswer'] = data_category_mapping_result['category_name']
             if data_category_mapping_result['is_category_changed']:
                 changed_category_macros.loc[len(changed_category_macros)] = row
 
+        # Fill category fields
+        if data_category_mapping_result['mapping'] is not None and len(data_category_mapping_result['mapping']) > 0:
+            pwa_row['Product__c'] = data_category_mapping_result['mapping']['label1']
+            pwa_row['Category__c'] = data_category_mapping_result['mapping']['label2']
+            pwa_row['SubCategory1__c'] = data_category_mapping_result['mapping']['label3']
+            pwa_row['SubCategory2__c'] = data_category_mapping_result['mapping']['label4']
+            pwa_row['SubCategory3__c'] = data_category_mapping_result['mapping']['label5']
+
         pwa_row['ZendeskId__c'] = extract_zendesk_id(row['Answer__c'])
-        pwa_df.loc[len(pwa_df)] = pwa_row
+
+        # Add en_US
+        if  pwa_row['Language'] == 'en_GB':
+            pwa_row['Language'] = 'en_US'
+            pwa_df.loc[len(pwa_df)] = pwa_row
+            pwa_row['Language'] = 'en_GB'
+            pwa_row['datacategorygroup.PreWrittenAnswer'] = ''
+            pwa_row['IsMasterLanguage'] = 0
+            pwa_df.loc[len(pwa_df)] = pwa_row
+        else :
+            pwa_df.loc[len(pwa_df)] = pwa_row
     else:
         macros_to_delete.loc[len(macros_to_delete)] = row
 
 pwa_df = pwa_df.sort_values(by=['ZendeskId__c', 'IsMasterLanguage'], ascending=[True, False])
 
-pwa_df.to_csv(f'Outputs/import_{EXPORT_NUMBER}.csv',index=False)
-kept_macros.to_csv(f'Outputs/kept_macros_{EXPORT_NUMBER}.csv',index=False)
-macros_to_delete.to_csv(f'Outputs/macros_to_delete_{EXPORT_NUMBER}.csv',index=False)
-changed_category_macros.to_csv(f'Outputs/changed_category_macros_{EXPORT_NUMBER}.csv',index=False)
+pwa_df.to_csv(f'Outputs/import_{EXPORT_NUMBER}_{CHANNEL}.csv',index=False)
+kept_macros.to_csv(f'Outputs/kept_macros_{EXPORT_NUMBER}_{CHANNEL}.csv',index=False)
+macros_to_delete.to_csv(f'Outputs/macros_to_delete_{EXPORT_NUMBER}_{CHANNEL}.csv',index=False)
+changed_category_macros.to_csv(f'Outputs/changed_category_macros_{EXPORT_NUMBER}_{CHANNEL}.csv',index=False)
 
 # delete macros html files
 if DELETE_MOCROS:
@@ -216,5 +243,5 @@ if DELETE_MOCROS:
         except Exception as e:
             mocros_not_deleted.loc[len(mocros_not_deleted)] = row
             # print(f"An error occurred: {e}")
-    macros_deleted.to_csv(f'Outputs/macros_deleted_{EXPORT_NUMBER}.csv',index=False)
-    mocros_not_deleted.to_csv(f'Outputs/mocros_not_deleted_{EXPORT_NUMBER}.csv',index=False)
+    macros_deleted.to_csv(f'Outputs/macros_deleted_{EXPORT_NUMBER}_{CHANNEL}.csv',index=False)
+    mocros_not_deleted.to_csv(f'Outputs/mocros_not_deleted_{EXPORT_NUMBER}_{CHANNEL}.csv',index=False)

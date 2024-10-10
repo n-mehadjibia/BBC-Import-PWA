@@ -1,0 +1,1140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup>
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCB_TI_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payment</label>
+                    <name>BBCB_TI_Payment</name>
+                </dataCategory>
+                <label>Technical Issue</label>
+                <name>BBCB_TechnicalIssue</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Modify booking</label>
+                    <name>BBCB_B_ModifyBooking</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Booking confirmation/Invoice</label>
+                    <name>BBCB_B_BookingConfirmationInvoice</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Cancel booking</label>
+                    <name>BBCB_B_CancelBooking</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Make booking</label>
+                    <name>BBCB_B_MakeBooking</name>
+                </dataCategory>
+                <label>Booking</label>
+                <name>BBCB_Booking</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Compensation Request</label>
+                        <name>BBCB_C_E_CompensationRequest</name>
+                    </dataCategory>
+                    <label>Escalation</label>
+                    <name>BBCB_C_Escalation</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Payment &amp; Vouchers</label>
+                        <name>BBCB_C_S_PaymentVouchers</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Booking</label>
+                        <name>BBCB_C_S_Booking</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Compensation Request</label>
+                        <name>BBCB_C_S_CompensationRequest</name>
+                    </dataCategory>
+                    <label>Solved</label>
+                    <name>BBCB_C_Solved</name>
+                </dataCategory>
+                <label>Call</label>
+                <name>BBCB_Call</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Boarding issue</label>
+                    <name>BBCB_CR_BoardingIssue</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Strike</label>
+                        <name>BBCB_CR_D_Strike</name>
+                    </dataCategory>
+                    <label>Delay</label>
+                    <name>BBCB_CR_Delay</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Emergency</label>
+                    <name>BBCB_CR_Emergency</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Hotel refund</label>
+                    <name>BBCB_CR_HotelRefund</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Tech issue</label>
+                    <name>BBCB_CR_TechIssue</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Transport plan modification</label>
+                    <name>BBCB_CR_TransportPlanModification</name>
+                </dataCategory>
+                <label>Compensation Request</label>
+                <name>BBCB_CompensationRequest</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DRVR</label>
+                    <name>BBCB_F_DRVR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCB_F_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>PSGR</label>
+                    <name>BBCB_F_PSGR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Service</label>
+                    <name>BBCB_F_Service</name>
+                </dataCategory>
+                <label>Feedback</label>
+                <name>BBCB_Feedback</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Destinations/Stations/Schedule</label>
+                    <name>BBCB_G_DestinationsStationsSchedule</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Getting ready</label>
+                    <name>BBCB_G_GettingReady</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Minors</label>
+                    <name>BBCB_G_Minors</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Onboard Services</label>
+                    <name>BBCB_G_OnboardServices</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Price</label>
+                    <name>BBCB_G_Price</name>
+                </dataCategory>
+                <label>General</label>
+                <name>BBCB_General</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Animals</label>
+                    <name>BBCB_L_Animals</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Lost &amp; Found</label>
+                    <name>BBCB_L_LostFound</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Luggage policy</label>
+                    <name>BBCB_L_LuggagePolicy</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Special Luggage</label>
+                    <name>BBCB_L_SpecialLuggage</name>
+                </dataCategory>
+                <label>Luggage</label>
+                <name>BBCB_Luggage</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Other</label>
+                <name>BBCB_Other</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Refund</label>
+                    <name>BBCB_PV_Refund</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Double payment</label>
+                    <name>BBCB_PV_DoublePayment</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payment unsuccessful</label>
+                    <name>BBCB_PV_PaymentUnsuccessful</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Voucher</label>
+                    <name>BBCB_PV_Voucher</name>
+                </dataCategory>
+                <label>Payment &amp; Vouchers</label>
+                <name>BBCB_PaymentVouchers</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Point of sales</label>
+                    <name>BBCB_PP_PointOfSales</name>
+                </dataCategory>
+                <label>Press &amp; Partnerships</label>
+                <name>BBCB_PressPartnerships</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Reduced mobility</label>
+                <name>BBCB_ReducedMobility</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Incident</label>
+                    <name>BBCB_TS_Incident</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Insurance</label>
+                    <name>BBCB_TS_Insurance</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>General Victim</label>
+                        <name>BBCB_TS_VR_GeneralVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Discrimination Victim</label>
+                        <name>BBCB_TS_VR_DiscriminationVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Missing Person Victim</label>
+                        <name>BBCB_TS_VR_MissingPersonVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Harassment victim</label>
+                        <name>BBCB_TS_VR_HarassmentVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Fraud Victim</label>
+                        <name>BBCB_TS_VR_FraudVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Dating</label>
+                        <name>BBCB_TS_VR_Dating</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Bad Experience</label>
+                        <name>BBCB_TS_VR_BadExperience</name>
+                    </dataCategory>
+                    <label>Victim Report</label>
+                    <name>BBCB_TS_VictimReport</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Data</label>
+                    <name>BBCB_TS_Data</name>
+                </dataCategory>
+                <label>Trust &amp; Safety</label>
+                <name>BBCB_TrustSafety</name>
+            </dataCategory>
+            <label>BlaBlaCar Bus</label>
+            <name>BlaBlaCarBus</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBC_TI_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Mobile apps</label>
+                    <name>BBC_TI_MobileApps</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payment</label>
+                    <name>BBC_TI_Payment</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payout</label>
+                    <name>BBC_TI_Payout</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Publication</label>
+                    <name>BBC_TI_Publication</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Signup/Login/Password</label>
+                    <name>BBC_TI_SignupLoginPassword</name>
+                </dataCategory>
+                <label>Technical Issue</label>
+                <name>BBC_TechnicalIssue</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Basics</label>
+                    <name>BBC_G_Basics</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Company</label>
+                    <name>BBC_G_Company</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>DRVR-PSGR Communication</label>
+                    <name>BBC_G_DRVRPSGRCommunication</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>DSA</label>
+                        <name>BBC_G_F_DSA</name>
+                    </dataCategory>
+                    <label>Feedback</label>
+                    <name>BBC_G_Feedback</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Howtank</label>
+                    <name>BBC_G_Howtank</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Moderation</label>
+                    <name>BBC_G_Moderation</name>
+                </dataCategory>
+                <label>General</label>
+                <name>BBC_General</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Insurance</label>
+                    <name>BBC_TS_Insurance</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Police request</label>
+                    <name>BBC_TS_PoliceRequest</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Reassure</label>
+                    <name>BBC_TS_Reassure</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>General Suspect</label>
+                        <name>BBC_TS_SB_GeneralSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Dating Suspect</label>
+                        <name>BBC_TS_SB_DatingSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <dataCategory>
+                            <label>Transfer Blocked</label>
+                            <name>BBC_TS_SB_DDS_TransferBlocked</name>
+                        </dataCategory>
+                        <label>Dangerous Driver Suspect</label>
+                        <name>BBC_TS_SB_DangerousDriverSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Alcohol/Drugs Suspect</label>
+                        <name>BBC_TS_SB_AlcoholDrugsSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Pre Payment Suspect</label>
+                        <name>BBC_TS_SB_PrePaymentSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Fraud Suspect</label>
+                        <name>BBC_TS_SB_FraudSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Discrimination Suspect</label>
+                        <name>BBC_TS_SB_DiscriminationSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Minor</label>
+                        <name>BBC_TS_SB_Minor</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>PSGR Non payment suspect</label>
+                        <name>BBC_TS_SB_PSGRNonPaymentSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Unreliability Suspect</label>
+                        <name>BBC_TS_SB_UnreliabilitySuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Aggression Suspect</label>
+                        <name>BBC_TS_SB_AggressionSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Business Suspect</label>
+                        <name>BBC_TS_SB_BusinessSuspect</name>
+                    </dataCategory>
+                    <label>Suspect Block</label>
+                    <name>BBC_TS_SuspectBlock</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Business Suspect</label>
+                        <name>BBC_TS_SU_BusinessSuspect</name>
+                    </dataCategory>
+                    <label>Suspect Unblock</label>
+                    <name>BBC_TS_SuspectUnblock</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Discrimination Suspect</label>
+                        <name>BBC_TS_SW_DiscriminationSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Fraud Suspect</label>
+                        <name>BBC_TS_SW_FraudSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Dangerous Driver Suspect</label>
+                        <name>BBC_TS_SW_DangerousDriverSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Lent Profile Suspect</label>
+                        <name>BBC_TS_SW_LentProfileSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Unreliability Suspect</label>
+                        <name>BBC_TS_SW_UnreliabilitySuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Harassment/Insults Suspect</label>
+                        <name>BBC_TS_SW_HarassmentInsultsSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Business Suspect</label>
+                        <name>BBC_TS_SW_BusinessSuspect</name>
+                    </dataCategory>
+                    <label>Suspect Warning</label>
+                    <name>BBC_TS_SuspectWarning</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>General Victim</label>
+                        <name>BBC_TS_VR_GeneralVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Pre Payment victim</label>
+                        <name>BBC_TS_VR_PrePaymentVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Fraud Victim</label>
+                        <name>BBC_TS_VR_FraudVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Dating Victim</label>
+                        <name>BBC_TS_VR_DatingVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>DRVR Non payment victim</label>
+                        <name>BBC_TS_VR_DRVRNonPaymentVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Dangerous Driver Victim</label>
+                        <name>BBC_TS_VR_DangerousDriverVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <dataCategory>
+                            <label>Discrimination</label>
+                            <name>BBC_TS_VR_FBV_Discrimination</name>
+                        </dataCategory>
+                        <label>Fake Booking Victim</label>
+                        <name>BBC_TS_VR_FakeBookingVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <dataCategory>
+                            <label>Discrimination</label>
+                            <name>BBC_TS_VR_CRV_Discrimination</name>
+                        </dataCategory>
+                        <label>Car Retention Victim</label>
+                        <name>BBC_TS_VR_CarRetentionVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Discrimination Victim</label>
+                        <name>BBC_TS_VR_DiscriminationVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Missing Person Victim</label>
+                        <name>BBC_TS_VR_MissingPersonVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Accident/Breakdown Victim</label>
+                        <name>BBC_TS_VR_AccidentBreakdownVictim</name>
+                    </dataCategory>
+                    <label>Victim Report</label>
+                    <name>BBC_TS_VictimReport</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>General Victim</label>
+                        <name>BBC_TS_E_GeneralVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>General Suspect</label>
+                        <name>BBC_TS_E_GeneralSuspect</name>
+                    </dataCategory>
+                    <label>Education</label>
+                    <name>BBC_TS_Education</name>
+                </dataCategory>
+                <label>Trust &amp; Safety</label>
+                <name>BBC_TrustSafety</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Notifications</label>
+                    <name>BBC_PA_Notifications</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Phone number</label>
+                    <name>BBC_PA_PhoneNumber</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Data</label>
+                        <name>BBC_PA_P_Data</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Photo</label>
+                        <name>BBC_PA_P_Photo</name>
+                    </dataCategory>
+                    <label>Profile</label>
+                    <name>BBC_PA_Profile</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Signup/Login/Password</label>
+                    <name>BBC_PA_SignupLoginPassword</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>ID Check</label>
+                    <name>BBC_PA_IDCheck</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Verified Profile</label>
+                    <name>BBC_PA_VerifiedProfile</name>
+                </dataCategory>
+                <label>Profile &amp; Account</label>
+                <name>BBC_ProfileAccount</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DRVR-PSGR Communication</label>
+                    <name>BBC_OMR_DRVRPSGRCommunication</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBC_OMR_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Manual approval</label>
+                    <name>BBC_OMR_ManualApproval</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Newbie driver success program</label>
+                    <name>BBC_OMR_NewbieDriverSuccessProgram</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Price</label>
+                    <name>BBC_OMR_Price</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Publication</label>
+                    <name>BBC_OMR_Publication</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Standards</label>
+                    <name>BBC_OMR_Standards</name>
+                </dataCategory>
+                <label>Offering &amp; Managing my ride</label>
+                <name>BBC_OfferingManagingMyRide</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DRVR-PSGR Communication</label>
+                    <name>BBC_MB_DRVRPSGRCommunication</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Price</label>
+                        <name>BBC_MB_G_Price</name>
+                    </dataCategory>
+                    <label>General</label>
+                    <name>BBC_MB_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Manual approval</label>
+                    <name>BBC_MB_ManualApproval</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Search</label>
+                    <name>BBC_MB_Search</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Long term fee test FR</label>
+                    <name>BBC_MB_LongTermFeeTestFR</name>
+                </dataCategory>
+                <label>Making a booking</label>
+                <name>BBC_MakingABooking</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Payin PSGR</label>
+                    <name>BBC_MP_PayinPSGR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payout DRVR</label>
+                    <name>BBC_MP_PayoutDRVR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Refund</label>
+                    <name>BBC_MP_Refund</name>
+                </dataCategory>
+                <label>Money &amp; Payments</label>
+                <name>BBC_MoneyPayments</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>DRVR</label>
+                    <name>BBC_CMC_DRVR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBC_CMC_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>PSGR</label>
+                    <name>BBC_CMC_PSGR</name>
+                </dataCategory>
+                <label>Cancelling or making a claim</label>
+                <name>BBC_CancellingOrMakingAClaim</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Deleting</label>
+                    <name>BBC_R_Deleting</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Editing</label>
+                    <name>BBC_R_Editing</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Leaving</label>
+                    <name>BBC_R_Leaving</name>
+                </dataCategory>
+                <label>Ratings</label>
+                <name>BBC_Ratings</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBC_P_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>OKKO</label>
+                    <name>BBC_P_OKKO</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Total</label>
+                    <name>BBC_P_Total</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Vinci</label>
+                    <name>BBC_P_Vinci</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>ESCBonus</label>
+                    <name>BBC_P_ESCBonus</name>
+                </dataCategory>
+                <label>Partnerships</label>
+                <name>BBC_Partnerships</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Feedback</label>
+                    <name>BBC_BBH_Feedback</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBC_BBH_General</name>
+                </dataCategory>
+                <label>BlaBlaHelp</label>
+                <name>BBC_BlaBlaHelp</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Feedback</label>
+                    <name>BBC_TD_Feedback</name>
+                </dataCategory>
+                <label>Top DRVR</label>
+                <name>BBC_TopDRVR</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Automated</label>
+                    <name>BBC_A_Automated</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Reply to automated</label>
+                    <name>BBC_A_ReplyToAutomated</name>
+                </dataCategory>
+                <label>Automated</label>
+                <name>BBC_Automated</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Test macros</label>
+                <name>BBC_TestMacros</name>
+            </dataCategory>
+            <label>BlaBlaCar</label>
+            <name>BlaBlaCar</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCD_TI_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Mobile apps</label>
+                    <name>BBCD_TI_MobileApps</name>
+                </dataCategory>
+                <label>Technical Issue</label>
+                <name>BBCD_TechnicalIssue</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>DSA</label>
+                        <name>BBCD_G_F_DSA</name>
+                    </dataCategory>
+                    <label>Feedback</label>
+                    <name>BBCD_G_Feedback</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Basics</label>
+                    <name>BBCD_G_Basics</name>
+                </dataCategory>
+                <label>General</label>
+                <name>BBCD_General</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Dating victim</label>
+                        <name>BBCD_TS_VR_DatingVictim</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Fraud victim</label>
+                        <name>BBCD_TS_VR_FraudVictim</name>
+                    </dataCategory>
+                    <label>Victim Report</label>
+                    <name>BBCD_TS_VictimReport</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Fraud Suspect</label>
+                        <name>BBCD_TS_SW_FraudSuspect</name>
+                    </dataCategory>
+                    <label>Suspect Warning</label>
+                    <name>BBCD_TS_SuspectWarning</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Dating Suspect</label>
+                        <name>BBCD_TS_SB_DatingSuspect</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Fraud Suspect</label>
+                        <name>BBCD_TS_SB_FraudSuspect</name>
+                    </dataCategory>
+                    <label>Suspect Block</label>
+                    <name>BBCD_TS_SuspectBlock</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Reassure</label>
+                    <name>BBCD_TS_Reassure</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCD_TS_General</name>
+                </dataCategory>
+                <label>Trust &amp; Safety</label>
+                <name>BBCD_TrustSafety</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Phone number</label>
+                    <name>BBCD_PA_PhoneNumber</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Signup/Login/Password</label>
+                    <name>BBCD_PA_SignupLoginPassword</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Profile</label>
+                    <name>BBCD_PA_Profile</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Notifications</label>
+                    <name>BBCD_PA_Notifications</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Basics</label>
+                    <name>BBCD_PA_Basics</name>
+                </dataCategory>
+                <label>Profile &amp; Account</label>
+                <name>BBCD_ProfileAccount</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCD_OMR_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Price</label>
+                    <name>BBCD_OMR_Price</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Publication</label>
+                    <name>BBCD_OMR_Publication</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Manual approval</label>
+                    <name>BBCD_OMR_ManualApproval</name>
+                </dataCategory>
+                <label>Offering &amp; Managing my ride</label>
+                <name>BBCD_OfferingManagingMyRide</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCD_MB_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Search</label>
+                    <name>BBCD_MB_Search</name>
+                </dataCategory>
+                <label>Making a booking</label>
+                <name>BBCD_MakingABooking</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCD_MP_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Ayden</label>
+                        <name>BBCD_MP_PD_Ayden</name>
+                    </dataCategory>
+                    <label>Payout DRVR</label>
+                    <name>BBCD_MP_PayoutDRVR</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payin PSGR</label>
+                    <name>BBCD_MP_PayinPSGR</name>
+                </dataCategory>
+                <label>Money &amp; Payments</label>
+                <name>BBCD_MoneyPayments</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Cancelling or making a claim</label>
+                <name>BBCD_CancellingOrMakingAClaim</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Total</label>
+                    <name>BBCD_P_Total</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>ESC</label>
+                    <name>BBCD_P_ESC</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>ESCBonus</label>
+                    <name>BBCD_P_ESCBonus</name>
+                </dataCategory>
+                <label>Partnerships</label>
+                <name>BBCD_Partnerships</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Sponsorship</label>
+                <name>BBCD_Sponsorship</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Awareness</label>
+                    <name>BBCD_K_Awareness</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Transition</label>
+                    <name>BBCD_K_Transition</name>
+                </dataCategory>
+                <label>Klaxit</label>
+                <name>BBCD_Klaxit</name>
+            </dataCategory>
+            <label>BlaBlaCar Daily</label>
+            <name>BlaBlaCarDaily</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Booking confirmation</label>
+                    <name>BBCT_B_BookingConfirmation</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Cancel booking</label>
+                    <name>BBCT_B_CancelBooking</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Make booking</label>
+                    <name>BBCT_B_MakeBooking</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Change booking</label>
+                    <name>BBCT_B_ChangeBooking</name>
+                </dataCategory>
+                <label>Booking</label>
+                <name>BBCT_Booking</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Minors</label>
+                    <name>BBCT_G_Minors</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Documents</label>
+                    <name>BBCT_G_Documents</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Complaints</label>
+                    <name>BBCT_G_Complaints</name>
+                </dataCategory>
+                <label>General</label>
+                <name>BBCT_General</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Lost &amp; found</label>
+                    <name>BBCT_L_LostFound</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Luggage policy</label>
+                    <name>BBCT_L_LuggagePolicy</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Special luggage</label>
+                    <name>BBCT_L_SpecialLuggage</name>
+                </dataCategory>
+                <label>Luggage</label>
+                <name>BBCT_Luggage</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>BBCT_TI_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payment</label>
+                    <name>BBCT_TI_Payment</name>
+                </dataCategory>
+                <label>Technical issue</label>
+                <name>BBCT_TechnicalIssue</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Refund</label>
+                    <name>BBCT_P_Refund</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Delayed train</label>
+                        <name>BBCT_P_RR_DelayedTrain</name>
+                    </dataCategory>
+                    <label>Refund request</label>
+                    <name>BBCT_P_RefundRequest</name>
+                </dataCategory>
+                <label>Payment</label>
+                <name>BBCT_Payment</name>
+            </dataCategory>
+            <dataCategory>
+                <label>PRM</label>
+                <name>BBCT_PRM</name>
+            </dataCategory>
+            <label>BlaBlaCar Train</label>
+            <name>BlaBlaCarTrain</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Make booking</label>
+                    <name>PMB_B_MakeBooking</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Cancel booking</label>
+                    <name>PMB_B_CancelBooking</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Modify booking</label>
+                    <name>PMB_B_ModifyBooking</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Booking confirmation/Invoice</label>
+                    <name>PMB_B_BookingConfirmationInvoice</name>
+                </dataCategory>
+                <label>Booking</label>
+                <name>PMB_Booking</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Luggage</label>
+                <name>PMB_Luggage</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Payment</label>
+                    <name>PMB_PV_Payment</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Promo code</label>
+                    <name>PMB_PV_PromoCode</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Refund</label>
+                    <name>PMB_PV_Refund</name>
+                </dataCategory>
+                <label>Payments &amp; Vouchers</label>
+                <name>PMB_PaymentsVouchers</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Complaints and claims</label>
+                    <name>PMB_CR_ComplaintsAndClaims</name>
+                </dataCategory>
+                <label>Compensation Request</label>
+                <name>PMB_CompensationRequest</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Carrier</label>
+                    <name>PMB_F_Carrier</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Service</label>
+                    <name>PMB_F_Service</name>
+                </dataCategory>
+                <label>Feedback</label>
+                <name>PMB_Feedback</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Identity Documents</label>
+                    <name>PMB_G_IdentityDocuments</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Minors</label>
+                    <name>PMB_G_Minors</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Onboard Services</label>
+                    <name>PMB_G_OnboardServices</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Destinations/Stations/Schedule</label>
+                    <name>PMB_G_DestinationsStationsSchedule</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>UA</label>
+                    <name>PMB_G_UA</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Price</label>
+                    <name>PMB_G_Price</name>
+                </dataCategory>
+                <label>General</label>
+                <name>PMB_General</name>
+            </dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>General</label>
+                    <name>PMB_TI_General</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Payment</label>
+                    <name>PMB_TI_Payment</name>
+                </dataCategory>
+                <label>Technical Issue</label>
+                <name>PMB_TechnicalIssue</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Trust &amp; Safety</label>
+                <name>PMB_TrustSafety</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Trip cancellation/change</label>
+                <name>PMB_TripCancellationChange</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Escalation Process</label>
+                <name>PMB_EscalationProcess</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Carrier reply</label>
+                <name>PMB_CarrierReply</name>
+            </dataCategory>
+            <label>Pro Marketplace Bus</label>
+            <name>ProMarketplaceBus</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>FR</label>
+                        <name>OBI_I_F_FR</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>EN</label>
+                        <name>OBI_I_F_EN</name>
+                    </dataCategory>
+                    <label>FRANCE</label>
+                    <name>OBI_I_FRANCE</name>
+                </dataCategory>
+                <label>Incidents</label>
+                <name>OBI_Incidents</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Pax communication</label>
+                <name>OBI_PaxCommunication</name>
+            </dataCategory>
+            <dataCategory>
+                <label>X-Incident solved</label>
+                <name>OBI_XIncidentSolved</name>
+            </dataCategory>
+            <label>OB incident</label>
+            <name>OBIncident</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Account activated</label>
+                <name>BBCA_AccountActivated</name>
+            </dataCategory>
+            <dataCategory>
+                <label>Data asked</label>
+                <name>BBCA_DataAsked</name>
+            </dataCategory>
+            <label>BlaBlaCar API</label>
+            <name>BlaBlaCarAPI</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Pre-written answer</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>
